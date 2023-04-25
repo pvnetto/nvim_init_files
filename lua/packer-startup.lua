@@ -7,7 +7,7 @@ return require('packer').startup(function()
 	use 'rose-pine/neovim'
 
 	-- file explorer 
-	use 'preservim/nerdtree'
+	use 'nvim-tree/nvim-tree.lua'
 
 	-- lsp & static analysis
 	use 'neovim/nvim-lspconfig'

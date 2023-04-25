@@ -1,2 +1,6 @@
-vim.cmd("autocmd StdinReadPre * let s:std_in=1")
-vim.cmd("autocmd VimEnter * NERDTree | if argc() > 0 || exists('s:std_in') | wincmd p | endif")
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.opt.termguicolors = true
+
+require('nvim-tree').setup()
