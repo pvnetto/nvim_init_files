@@ -3,7 +3,7 @@
 local activeServers = {
 	"clangd",
 	"lua_ls",
---	"cmake"
+	"cmake"
 }
 
 require("mason").setup({

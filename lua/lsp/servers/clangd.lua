@@ -18,7 +18,6 @@ return {
 			"clangd",
 			"--all-scopes-completion",
 			"--background-index",
-			"--log=verbose"
 		},
 		filetypes = { "c", "cpp", "objc", "objcpp" },
 		root_dir = function (fname)

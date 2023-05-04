@@ -7,5 +7,6 @@ require "packer-startup"
 
 require "completion"
 require "lsp"
+require "fuzzy-search"
 
 vim.cmd('let g:airline#extensions#tabline#enabled = 1')
