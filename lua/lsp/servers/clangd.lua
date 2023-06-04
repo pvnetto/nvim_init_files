@@ -27,6 +27,14 @@ return {
 			compilationDatabasePath = "build"
 		}
 	},
+	commands = {
+		ClangdSwitchSourceHeader = {
+			function()
+				switch_source_header(0)
+			end,
+			description = "Switch between source/header"
+		}
+	},
 	on_attach = function(client, bufnr)
 		local serverCapabilities = client.server_capabilities
 		if serverCapabilities.semanticTokensProvider and serverCapabilities.semanticTokensProvider.full then

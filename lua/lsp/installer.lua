@@ -2,7 +2,7 @@
 
 local activeServers = {
 	"clangd",
-	"lua_ls",
+--	"lua_ls",
 	"cmake"
 }
 
@@ -31,19 +31,19 @@ local lspconfig = require("lspconfig")
 local setupKeybinds = require("lsp.keybinds").setup
 for _, serverName in pairs(activeServers) do
 	serverName = vim.split(serverName, "@")[1]
-	local lspServerOK, serverConfig = pcall(require, "lsp.servers." .. serverName)
+	local lspServerOK, serverLocalConfig = pcall(require, "lsp.servers." .. serverName)
 	if lspServerOK then
 		-- Expands settings table with lsp-specific settings
 		local settings = {
 			capabilities = capabilities,
 			on_attach = function(client, bufnr)
 				setupKeybinds(bufnr)
-				serverConfig.on_attach(client, bufnr)
+				serverLocalConfig.on_attach(client, bufnr)
 			end
 		}
 
 
-		settings = vim.tbl_deep_extend("force", serverConfig.settings, settings)
+		settings = vim.tbl_deep_extend("force", serverLocalConfig.settings, settings)
 		--print(vim.inspect(settings))
 		lspconfig[serverName].setup(settings)
 	else

@@ -1,1 +1,12 @@
-vim.cmd.colorscheme('tokyonight-moon')
+-- Note: We currently get semantic highlighting from clangd with treesitter as a fallback 
+vim.cmd.colorscheme('kanagawa')
+vim.cmd('hi @lsp.mod.readonly guifg=clear')
+vim.cmd('hi @lsp.type.class guifg=#957fb8')
+vim.cmd('hi @keyword.return guifg=#e6c384')
+vim.cmd('hi @namespace guifg=#957fb8')
+vim.cmd('hi @variable guifg=#bcbcbc')
+vim.cmd('hi Statement guifg=#e6c384')
+vim.cmd('hi Type guifg=#e6c384')
+vim.cmd('hi Keyword guifg=#e6c384')
+vim.cmd('hi Structure guifg=#957fb8')
+vim.api.nvim_set_hl(0, 'Identifier', { link = "@variable" })
